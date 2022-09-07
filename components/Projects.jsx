@@ -16,6 +16,7 @@ export default function Projects() {
     { display: true, tech: "OOP" },
     { display: true, tech: "Async" },
     { display: true, tech: "Auth0" },
+    { display: true, tech: "MUI" },
   ]);
 
   const [projectsToDisplay, setProjectsToDisplay] = useState([
@@ -65,14 +66,7 @@ export default function Projects() {
       shortDesc:
         "Full stack app, scaffolded in a code-along and fleshed out individually.",
       image: "/images/trip-logger.png",
-      techUsed: [
-        "Auth0",
-        "Bootstrap",
-        "React",
-        "Expressjs",
-        "Async",
-        "Mongodb",
-      ],
+      techUsed: ["Auth0", "MUI", "React", "Expressjs", "Async", "Mongodb"],
       display: true,
     },
     {

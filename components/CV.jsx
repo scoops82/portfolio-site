@@ -74,64 +74,66 @@ export default function CV() {
         <li className={index > 1 ? "mb-5 step step-primary" : "mb-5 step"}></li>
       </ul>
 
-      <div className="card m-auto w-auto  max-w-4xl bg-base-100">
-        <div className="card-body items-center text-center">
-          <h3 className="card-title text-2xl">{timeline[index].title}</h3>
-          <p className="text-center">{timeline[index].dates}</p>
-          <h4 className="text-xl">Work</h4>
-          <ul className="text-left">
-            {timeline[index].work.map((work, i) => (
-              <li key={i}>{work}</li>
-            ))}
-          </ul>
-          <div className="divider"></div>
-          <h4 className="text-xl">Education</h4>
-          <ul className="text-left">
-            {timeline[index].education.map((study, i) => (
-              <li key={i}>{study}</li>
-            ))}
-          </ul>
-          <div className="card-actions justify-end">
-            <button
-              className="btn btn-primary"
-              onClick={() => decrementIndex()}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-                />
-              </svg>
-            </button>
-            <button
-              className="btn btn-primary"
-              onClick={() => incrementIndex()}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                />
-              </svg>
-            </button>
+      <h3 className="card-title text-2xl text-center m-auto">
+        {timeline[index].title}
+      </h3>
+      <p className="text-center">{timeline[index].dates}</p>
+
+      <div className="flex flex-wrap justify-center gap-4">
+        <div className="card w-96 bg-neutral text-neutral-content">
+          <div className="card-body items-center text-center">
+            <h4 className="text-xl">Work</h4>
+            <ul className="text-left">
+              {timeline[index].work.map((work, i) => (
+                <li key={i}>{work}</li>
+              ))}
+            </ul>
           </div>
         </div>
+        <div className="card w-96 bg-neutral text-neutral-content">
+          <div className="card-body items-center text-center">
+            <h4 className="text-xl">Education</h4>
+            <ul className="text-left">
+              {timeline[index].education.map((study, i) => (
+                <li key={i}>{study}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className="card-actions m-auto mt-4">
+        <button className="btn btn-primary" onClick={() => decrementIndex()}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+            />
+          </svg>
+        </button>
+        <button className="btn btn-primary" onClick={() => incrementIndex()}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+            />
+          </svg>
+        </button>
       </div>
     </section>
   );
