@@ -7,7 +7,7 @@ export default function Intro() {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">Meet Rupert</h1>
+            <h2 className="mb-5 text-5xl font-bold">Meet Rupert</h2>
             <p className="mb-5">
               Hi, I am a web developer with experience in the full stack and a
               wide range of technologies but specializing in Javascript and

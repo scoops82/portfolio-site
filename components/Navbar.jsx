@@ -20,9 +20,11 @@ export default function Navbar() {
           </svg>
         </label>
       </div>
-      <div className="flex-1 px-2 mx-2">
+      <div className="flex-1 px-2 mx-2 text-3xl">
         <Link href="/">
-          <a>Rupert Taylor</a>
+          <a>
+            <h1>Rupert Taylor</h1>
+          </a>
         </Link>
       </div>
       <div className="flex-none hidden lg:block">

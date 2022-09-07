@@ -18,7 +18,7 @@ export default function Projects() {
     { display: true, tech: "Auth0" },
   ]);
 
-  const projectsArr = [
+  const [projectsToDisplay, setProjectsToDisplay] = useState([
     // {
     //   title: '',
     //   gitHubLink: '',
@@ -26,15 +26,27 @@ export default function Projects() {
     //   shortDesc: '',
     //   image: '',
     //   techUsed: [],
+    //   display: true,
     // }
     {
       title: "Tic-Tac-Toe",
       gitHubLink: "https://github.com/scoops82/tic-tac-toe-react-firebase",
       liveLink: "https://tic-tac-toe-react-firebase.vercel.app/",
       shortDesc:
-        "A project I did to learn and practice realtime applications and to learn Tailwindcss.",
+        "A two-player game I made to learn and practice realtime applications and to learn Tailwindcss.",
       image: "/images/tictactoe-meta-image.jpeg",
-      techUsed: ["React", "Tailwind", "Firebase", "Async"],
+      techUsed: ["React", "Tailwind CSS", "Firebase", "Async"],
+      display: true,
+    },
+    {
+      title: "Portfolio Site",
+      gitHubLink: "https://github.com/scoops82/portfolio-site",
+      liveLink: "https://portfolio-site-five-teal.vercel.app/",
+      shortDesc:
+        "I wanted to learn how Nextjs worked and practice more with Tailwind CSS and DaisyUI.",
+      image: "/images/portfolio-site.png",
+      techUsed: ["Nextjs", "Tailwind CSS", "React"],
+      display: true,
     },
     {
       title: "Party Starter",
@@ -44,6 +56,7 @@ export default function Projects() {
         "A team project made during a hackathon with the theme 'Get the party started'.",
       image: "/images/partystarter.png",
       techUsed: ["Firebase", "Bootstrap", "React", "Async"],
+      display: true,
     },
     {
       title: "Trip Logger",
@@ -52,7 +65,15 @@ export default function Projects() {
       shortDesc:
         "Full stack app, scaffolded in a code-along and fleshed out individually.",
       image: "/images/trip-logger.png",
-      techUsed: ["Auth0", "Bootstrap", "React", "Express", "Async", "Mongodb"],
+      techUsed: [
+        "Auth0",
+        "Bootstrap",
+        "React",
+        "Expressjs",
+        "Async",
+        "Mongodb",
+      ],
+      display: true,
     },
     {
       title: "React Dashboard",
@@ -62,6 +83,7 @@ export default function Projects() {
         "An async dashboard giving you a task widget, world news, weather, and a joke.",
       image: "/images/react-dashboard.png",
       techUsed: ["React", "Vanilla CSS", "Async"],
+      display: true,
     },
     {
       title: "Rogue Rover",
@@ -70,6 +92,7 @@ export default function Projects() {
       shortDesc: "A game based on the Mars rover coding challenge.",
       image: "/images/rogue-rover.png",
       techUsed: ["OOP", "Bootstrap", "Vanilla JS"],
+      display: true,
     },
     {
       title: "Ajax Dashboard",
@@ -79,15 +102,16 @@ export default function Projects() {
         "A dashboard pulling information from five different APIs (weather, pexels, joke, news, Nasa) and showing the date and a ticking clock. ",
       image: "/images/ajax-dashboard.png",
       techUsed: ["Async", "Vanilla JS", "Bootstrap"],
+      display: true,
     },
-  ];
+  ]);
 
   function techTagDisplayRenderer(techTagObj, i) {
     if (techTagObj.display) {
       return (
         <div
           key={i}
-          className="badge badge-secondary"
+          className="badge badge-secondary cursor-pointer"
           onClick={() => techTagClickHandler(i)}
         >
           {techTagObj.tech}
@@ -97,7 +121,7 @@ export default function Projects() {
       return (
         <div
           key={i}
-          className="badge badge-outline"
+          className="badge badge-outline cursor-pointer"
           onClick={() => techTagClickHandler(i)}
         >
           {techTagObj.tech}
@@ -117,26 +141,47 @@ export default function Projects() {
 
     const newState = techTagsDisplay
       .slice(0, i)
-      .concat(techTagsDisplay.slice(i + 1, techTagsDisplay.length))
-      .concat(targetObj);
+      .concat(targetObj)
+      .concat(techTagsDisplay.slice(i + 1, techTagsDisplay.length));
+
     console.log(
       "🚀 ~ file: Projects.jsx ~ line 115 ~ techTagClickHandler ~ newState",
       newState
     );
     setTechTagsDisplay(newState);
   }
-  //   const techObj = techTagsDisplay[i];
 
-  //   let techObjDisplay = techObj.display;
-  //   techObjDisplay ? (techObjDisplay = false) : (techObjDisplay = true);
+  const displayProjectClassName =
+    "card w-auto max-w-md bg-base-100 shadow-xl image-full m-4";
+  const hideProjectClassName = "hidden";
 
-  //   setTechTagsDisplay([
-  //     ...techTagsDisplay,
-  //     (techTagsDisplay[i].display = techObjDisplay),
-  //   ]);
-  //   console.log("techTagsDisplay: ", techTagsDisplay);
-  //   // setTechTagsDisplay(...techTagsDisplay, techObj);
-  // }
+  function checkForAnyTagMatch(techArr) {
+    const tagCheckArr = [];
+    for (const tag of techTagsDisplay) {
+      if (tag.display && techArr.includes(tag.tech)) {
+        tagCheckArr.push(true);
+      } else {
+        tagCheckArr.push(false);
+      }
+    }
+    return tagCheckArr.includes(true);
+  }
+
+  function unselectAllTags() {
+    const techTagArr = techTagsDisplay.slice(0, techTagsDisplay.length);
+    for (const tag of techTagArr) {
+      tag.display = false;
+    }
+    setTechTagsDisplay(techTagArr);
+  }
+
+  function selectAllTags() {
+    const techTagArr = techTagsDisplay.slice(0, techTagsDisplay.length);
+    for (const tag of techTagArr) {
+      tag.display = true;
+    }
+    setTechTagsDisplay(techTagArr);
+  }
 
   return (
     <section className="flex flex-col items-center mt-8">
@@ -144,24 +189,44 @@ export default function Projects() {
       <div id="projects-container" className="min-h-screen">
         <div
           id="tags-selection-area"
-          className="flex flex-wrap bg-base-300 gap-4 justify-center p-4"
+          className="flex flex-row flex-wrap bg-base-300"
         >
-          {console.log("techTagsDisplay, ", techTagsDisplay)}
-          {techTagsDisplay.map((obj, i) => techTagDisplayRenderer(obj, i))}
+          <div className="flex flex-wrap bg-base-300 gap-4 justify-center p-4">
+            {console.log("techTagsDisplay, ", techTagsDisplay)}
+            {techTagsDisplay.map((obj, i) => techTagDisplayRenderer(obj, i))}
+            <button className="btn btn-xs" onClick={() => unselectAllTags()}>
+              Unselect All Tags
+            </button>
+            <button className="btn btn-xs" onClick={() => selectAllTags()}>
+              Select All Tags
+            </button>
+          </div>
         </div>
         <div
           id="project-display area"
           className="overflow-y-auto flex flex-wrap bg-base-200 max-w-screen"
         >
-          <ul className="flex flex-wrap gap-8 justify-center">
-            {projectsArr.map(
+          <ul className="flex flex-wrap gap-4 justify-center">
+            {projectsToDisplay.map(
               (
-                { title, gitHubLink, liveLink, shortDesc, image, techUsed },
+                {
+                  title,
+                  gitHubLink,
+                  liveLink,
+                  shortDesc,
+                  image,
+                  techUsed,
+                  display,
+                },
                 i
               ) => (
                 <div
                   key={i}
-                  className="card w-auto max-w-md bg-base-100 shadow-xl image-full m-4"
+                  className={
+                    checkForAnyTagMatch(techUsed)
+                      ? displayProjectClassName
+                      : hideProjectClassName
+                  }
                 >
                   <figure>
                     <Image src={image} alt={title} layout="fill" />
