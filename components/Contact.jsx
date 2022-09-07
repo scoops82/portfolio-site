@@ -20,6 +20,7 @@ export default function Contact() {
             <span>Name</span>
             <input
               type="text"
+              name="name"
               placeholder="Joe Bloggs"
               className="input input-bordered w-56"
               required
@@ -31,6 +32,7 @@ export default function Contact() {
             <span>Email</span>
             <input
               type="email"
+              name="email"
               placeholder="info@site.com"
               className="input input-bordered w-56"
               required
@@ -42,6 +44,7 @@ export default function Contact() {
             <span>Company</span>
             <input
               type="text"
+              name="company"
               placeholder="company"
               className="input input-bordered"
             />
@@ -49,6 +52,7 @@ export default function Contact() {
         </div>
         <textarea
           className="textarea textarea-bordered w-72 h-52"
+          name="message"
           placeholder="Message"
           required
         ></textarea>
