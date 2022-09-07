@@ -74,7 +74,7 @@ export default function CV() {
         <li className={index > 1 ? "mb-5 step step-primary" : "mb-5 step"}></li>
       </ul>
 
-      <div className="card m-auto w-auto  max-w-4xl bg-neutral text-neutral-content">
+      <div className="card m-auto w-auto  max-w-4xl bg-base-100">
         <div className="card-body items-center text-center">
           <h3 className="card-title text-2xl">{timeline[index].title}</h3>
           <p className="text-center">{timeline[index].dates}</p>

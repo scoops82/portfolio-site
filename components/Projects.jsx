@@ -41,7 +41,7 @@ export default function Projects() {
     {
       title: "Portfolio Site",
       gitHubLink: "https://github.com/scoops82/portfolio-site",
-      liveLink: "https://portfolio-site-five-teal.vercel.app/",
+      liveLink: "http://www.rupert-taylor.co.uk/",
       shortDesc:
         "I wanted to learn how Nextjs worked and practice more with Tailwind CSS and DaisyUI.",
       image: "/images/portfolio-site.png",
