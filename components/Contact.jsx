@@ -2,29 +2,6 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 
 export default function Contact() {
-  const [submitterName, setSubmitterName] = useState("");
-  const router = useRouter();
-  const confirmationScreenVisible =
-    router.query?.success && router.query.success === "true";
-  const formVisible = !confirmationScreenVisible;
-
-  const ConfirmationMessage = (
-    <React.Fragment>
-      <p>
-        Thank you for submitting this form. I should get back to you within
-        24-48 hours.
-      </p>
-
-      <button
-        className="btn btn-primary"
-        onClick={() => router.replace("/contact", undefined, { shallow: true })}
-      >
-        {" "}
-        Submit Another Response{" "}
-      </button>
-    </React.Fragment>
-  );
-
   const ContactForm = (
     <>
       <p className="mb-2 w-72 text-center m-auto">
@@ -33,7 +10,7 @@ export default function Contact() {
       <form
         name="contact-form"
         method="POST"
-        action="contact/?success=true"
+        action="/success"
         className="flex flex-col flex-wrap gap-2 items-center"
         data-netlify="true"
       >
@@ -91,7 +68,7 @@ export default function Contact() {
     <section id="contact" className="bg-base-200 p-4">
       <h2 className="mb-5 text-5xl font-bold text-center">Contact</h2>
 
-      {formVisible ? ContactForm : ConfirmationMessage}
+      {ContactForm}
     </section>
   );
 }
