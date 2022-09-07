@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import CV from "../components/CV";
 import Intro from "../components/Intro";
 import Navbar from "../components/Navbar";
 import Projects from "../components/Projects";
@@ -25,19 +26,20 @@ export default function Home() {
             <Navbar />
             <Intro />
             <Projects />
+            <CV />
           </div>
           <div className="drawer-side">
             <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
             <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
               {/* <!-- Sidebar content here --> */}
               <li>
-                <a>Intro</a>
+                <a href="#intro">Intro</a>
               </li>
               <li>
-                <a>Projects</a>
+                <a href="#projects">Projects</a>
               </li>
               <li>
-                <a>Detailed CV</a>
+                <a href="#timeline">Timeline</a>
               </li>
               <li>
                 <a>Contact Me</a>

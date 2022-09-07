@@ -31,13 +31,13 @@ export default function Navbar() {
         <ul className="menu menu-horizontal">
           {/* <!-- Navbar menu content here --> */}
           <li>
-            <a>Intro</a>
+            <a href="#intro">Intro</a>
           </li>
           <li>
-            <a>Projects</a>
+            <a href="#projects">Projects</a>
           </li>
           <li>
-            <a>Detailed CV</a>
+            <a href="#timeline">Timeline</a>
           </li>
           <li>
             <a>Contact Me</a>

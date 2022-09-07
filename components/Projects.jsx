@@ -184,23 +184,21 @@ export default function Projects() {
   }
 
   return (
-    <section className="flex flex-col items-center mt-8">
+    <section className="flex flex-col items-center mt-8" id="projects">
       <h2 className="mb-5 text-5xl font-bold">Projects</h2>
       <div id="projects-container" className="min-h-screen">
         <div
           id="tags-selection-area"
-          className="flex flex-row flex-wrap bg-base-300"
+          className="flex flex-wrap bg-base-300 gap-4 justify-center p-4"
         >
-          <div className="flex flex-wrap bg-base-300 gap-4 justify-center p-4">
-            {console.log("techTagsDisplay, ", techTagsDisplay)}
-            {techTagsDisplay.map((obj, i) => techTagDisplayRenderer(obj, i))}
-            <button className="btn btn-xs" onClick={() => unselectAllTags()}>
-              Unselect All Tags
-            </button>
-            <button className="btn btn-xs" onClick={() => selectAllTags()}>
-              Select All Tags
-            </button>
-          </div>
+          {console.log("techTagsDisplay, ", techTagsDisplay)}
+          {techTagsDisplay.map((obj, i) => techTagDisplayRenderer(obj, i))}
+          <button className="btn btn-xs" onClick={() => unselectAllTags()}>
+            Unselect All Tags
+          </button>
+          <button className="btn btn-xs" onClick={() => selectAllTags()}>
+            Select All Tags
+          </button>
         </div>
         <div
           id="project-display area"

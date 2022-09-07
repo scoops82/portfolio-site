@@ -24,7 +24,7 @@ export default function Intro() {
               Please have a look through my portfolio and contact me with any
               questions.
             </p>
-            <Link href="">
+            <Link href="#projects">
               <button className="btn btn-primary">See My Projects</button>
             </Link>
           </div>
