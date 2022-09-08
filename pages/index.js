@@ -46,7 +46,7 @@ export default function Home() {
 
                 <input
                   type="checkbox"
-                  data-toggle-theme="night,bumblebee"
+                  data-toggle-theme="bumblebee,night"
                   data-act-class="ACTIVECLASS"
                 />
 
