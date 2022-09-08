@@ -53,7 +53,7 @@ export default function Navbar() {
 
               <input
                 type="checkbox"
-                data-toggle-theme="bumblebee,night"
+                data-toggle-theme="night,bumblebee"
                 data-act-class="ACTIVECLASS"
               />
 
