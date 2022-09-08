@@ -5,7 +5,7 @@ module.exports = {
   },
   purge: {
     options: {
-      safelist: ["night"],
+      safelist: [/data-theme$/],
     },
   },
 };
