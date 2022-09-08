@@ -183,7 +183,7 @@ export default function Projects() {
       id="projects"
     >
       <h2 className="mb-5 text-5xl font-bold">Projects</h2>
-      <div id="projects-container" className="min-h-screen">
+      <div id="projects-container">
         <div
           id="tags-selection-area"
           className="flex flex-wrap bg-base-300 gap-4 justify-center p-4"
@@ -199,7 +199,7 @@ export default function Projects() {
         </div>
         <div
           id="project-display area"
-          className="overflow-y-auto flex flex-wrap bg-base-200 max-w-screen"
+          className="overflow-y-auto flex flex-wrap bg-base-200 max-w-screen min-h-fit"
         >
           <ul className="flex flex-wrap gap-4 justify-evenly">
             {projectsToDisplay.map(
