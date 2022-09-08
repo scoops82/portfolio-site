@@ -146,7 +146,7 @@ export default function Projects() {
   }
 
   const displayProjectClassName =
-    "card w-auto max-w-md bg-base-100 shadow-xl image-full m-4";
+    "card w-auto max-w-sm bg-base-100 shadow-xl image-full m-4";
   const hideProjectClassName = "hidden";
 
   function checkForAnyTagMatch(techArr) {
@@ -178,7 +178,10 @@ export default function Projects() {
   }
 
   return (
-    <section className="flex flex-col items-center mt-8" id="projects">
+    <section
+      className="flex flex-col items-center mt-8 max-w-4xl m-auto"
+      id="projects"
+    >
       <h2 className="mb-5 text-5xl font-bold">Projects</h2>
       <div id="projects-container" className="min-h-screen">
         <div
@@ -198,7 +201,7 @@ export default function Projects() {
           id="project-display area"
           className="overflow-y-auto flex flex-wrap bg-base-200 max-w-screen"
         >
-          <ul className="flex flex-wrap gap-4 justify-center">
+          <ul className="flex flex-wrap gap-4 justify-evenly">
             {projectsToDisplay.map(
               (
                 {

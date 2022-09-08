@@ -64,7 +64,7 @@ export default function CV() {
   }
   return (
     <section
-      className="h-fit p-4 flex flex-col justify-center align-middle"
+      className="h-fit p-4 flex flex-col justify-center align-middle max-w-4xl m-auto"
       id="timeline"
     >
       <h2 className="mb-5 text-5xl font-bold text-center">My Timeline</h2>
