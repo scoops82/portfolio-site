@@ -11,7 +11,7 @@ export default function CV() {
     //   education: [''],
     // },
     {
-      title: "Dandelion",
+      title: "Work in the UK",
       dates: "2013-Present",
       work: [
         "2013-Present - Built successfull e-commerce business with my wife. I built the website, automations and stock datase",
@@ -64,44 +64,23 @@ export default function CV() {
   }
   return (
     <section
-      className="h-fit p-4 flex flex-col justify-center align-middle max-w-4xl m-auto"
+      className="min-h-screen p-4 flex flex-col justify-start align-middle items-center gap-4 m-auto snap-center max-w-4xl"
       id="timeline"
     >
-      <h2 className="mb-5 text-5xl font-bold text-center">My Timeline</h2>
+      <div className="h-12"></div>
+
+      <h2 className="mb-8 text-5xl font-bold text-center">My Timeline</h2>
       <ul className="steps steps-horizontal">
         <li className="mb-5 step step-primary"></li>
         <li className={index > 0 ? "mb-5 step step-primary" : "mb-5 step"}></li>
         <li className={index > 1 ? "mb-5 step step-primary" : "mb-5 step"}></li>
       </ul>
 
-      <h3 className="card-title text-2xl text-center m-auto">
+      <h3 className="card-title text-2xl text-center mx-auto">
         {timeline[index].title}
       </h3>
-      <p className="text-center">{timeline[index].dates}</p>
-
-      <div className="flex flex-wrap justify-center gap-4">
-        <div className="card w-96 bg-neutral text-neutral-content">
-          <div className="card-body items-center text-center">
-            <h4 className="text-xl">Work</h4>
-            <ul className="text-left">
-              {timeline[index].work.map((work, i) => (
-                <li key={i}>{work}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className="card w-96 bg-neutral text-neutral-content">
-          <div className="card-body items-center text-center">
-            <h4 className="text-xl">Education</h4>
-            <ul className="text-left">
-              {timeline[index].education.map((study, i) => (
-                <li key={i}>{study}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className="card-actions m-auto mt-4">
+      <p className="text-center my-4">{timeline[index].dates}</p>
+      <div className="card-actions mx-auto my-4 ma-h-24">
         <button className="btn btn-primary" onClick={() => decrementIndex()}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -134,6 +113,29 @@ export default function CV() {
             />
           </svg>
         </button>
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-8">
+        <div className="card bg-neutral text-neutral-content max-w-xl">
+          <div className="card-body items-center text-center">
+            <h4 className="text-xl">Work</h4>
+            <ul className="text-left">
+              {timeline[index].work.map((work, i) => (
+                <li key={i}>{work}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="card bg-neutral text-neutral-content max-w-xl">
+          <div className="card-body items-center text-center">
+            <h4 className="text-xl">Education</h4>
+            <ul className="text-left">
+              {timeline[index].education.map((study, i) => (
+                <li key={i}>{study}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   );

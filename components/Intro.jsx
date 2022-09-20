@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Intro() {
   return (
     <section id="intro">
-      <div className="hero min-h-[80vh] bg-fixed bg-[url('/images/florian-olivo-4hbJ-eymZ1o-unsplash.jpg')]">
+      <div className="hero min-h-screen snap-start bg-fixed bg-[url('/images/florian-olivo-4hbJ-eymZ1o-unsplash.jpg')]">
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">

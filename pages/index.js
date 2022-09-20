@@ -24,14 +24,16 @@ export default function Home() {
 
       <div className="drawer ">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col">
+        <div className="drawer-content flex flex-col snap-y snap-mandatory">
           {/* <!-- Navbar --> */}
           <Navbar />
           <Intro />
           <Projects />
           <CV />
-          <Contact />
-          <Footer />
+          <div className="h-screen">
+            <Contact />
+            <Footer />
+          </div>
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-3" className="drawer-overlay"></label>

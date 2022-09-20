@@ -146,7 +146,7 @@ export default function Projects() {
   }
 
   const displayProjectClassName =
-    "card w-auto max-w-sm bg-base-100 shadow-xl image-full m-4";
+    "card w-auto max-w-sm bg-base-100 shadow-xl image-full m-4 h-fit";
   const hideProjectClassName = "hidden";
 
   function checkForAnyTagMatch(techArr) {
@@ -179,9 +179,10 @@ export default function Projects() {
 
   return (
     <section
-      className="flex flex-col items-center mt-8 max-w-4xl m-auto"
+      className="flex flex-col items-center mt-8 max-w-4xl m-auto min-h-screen snap-center"
       id="projects"
     >
+      <div className="min-h-16"></div>
       <h2 className="mb-5 text-5xl font-bold">Projects</h2>
       <div id="projects-container">
         <div
@@ -199,7 +200,7 @@ export default function Projects() {
         </div>
         <div
           id="project-display area"
-          className="overflow-y-auto flex flex-wrap bg-base-200 max-w-screen min-h-fit"
+          className="flex flex-wrap bg-base-200 max-w-screen h-[50rem] sm:h-[54rem] overflow-scroll"
         >
           <ul className="flex flex-wrap gap-4 justify-evenly">
             {projectsToDisplay.map(
@@ -215,7 +216,7 @@ export default function Projects() {
                 },
                 i
               ) => (
-                <div
+                <li
                   key={i}
                   className={
                     checkForAnyTagMatch(techUsed)
@@ -247,7 +248,7 @@ export default function Projects() {
                       </Link>
                     </div>
                   </div>
-                </div>
+                </li>
               )
             )}
           </ul>
