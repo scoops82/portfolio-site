@@ -67,9 +67,9 @@ export default function CV() {
       className="min-h-screen p-4 flex flex-col justify-start align-middle items-center gap-4 m-auto snap-center max-w-4xl"
       id="timeline"
     >
-      <div className="h-12"></div>
+      <div className="min-h-16"></div>
 
-      <h2 className="mb-8 text-5xl font-bold text-center">My Timeline</h2>
+      <h2 className="mb-2 text-5xl font-bold text-center">My Timeline</h2>
       <ul className="steps steps-horizontal">
         <li className="mb-5 step step-primary"></li>
         <li className={index > 0 ? "mb-5 step step-primary" : "mb-5 step"}></li>
@@ -117,7 +117,7 @@ export default function CV() {
 
       <div className="flex flex-wrap justify-center gap-8">
         <div className="card bg-neutral text-neutral-content max-w-xl">
-          <div className="card-body items-center text-center">
+          <div className="card-body items-center text-center overflow-y-auto h-36 md:h-auto">
             <h4 className="text-xl">Work</h4>
             <ul className="text-left">
               {timeline[index].work.map((work, i) => (
@@ -127,7 +127,7 @@ export default function CV() {
           </div>
         </div>
         <div className="card bg-neutral text-neutral-content max-w-xl">
-          <div className="card-body items-center text-center">
+          <div className="card-body items-center text-center overflow-y-auto h-36 md:h-auto">
             <h4 className="text-xl">Education</h4>
             <ul className="text-left">
               {timeline[index].education.map((study, i) => (

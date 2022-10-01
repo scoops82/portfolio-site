@@ -73,7 +73,7 @@ export default function Contact() {
       id="contact"
       className="bg-base-200 p-4 flex flex-col justify-center snap-start h-auto"
     >
-      <div className="h-2"></div>
+      <div className="h-12"></div>
       <h2 className="mb-5 text-5xl font-bold text-center my-4">Contact</h2>
 
       {ContactForm}

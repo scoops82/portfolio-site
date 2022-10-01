@@ -179,7 +179,7 @@ export default function Projects() {
 
   return (
     <section
-      className="flex flex-col items-center mt-8 max-w-4xl m-auto min-h-screen snap-center"
+      className="flex flex-col items-center mt-8 max-w-4xl m-auto max-h-screen snap-center"
       id="projects"
     >
       <div className="min-h-16"></div>
@@ -187,7 +187,7 @@ export default function Projects() {
       <div id="projects-container">
         <div
           id="tags-selection-area"
-          className="flex flex-wrap bg-base-300 gap-4 justify-center p-4"
+          className="flex flex-wrap bg-base-300 gap-4 justify-center p-4 "
         >
           {console.log("techTagsDisplay, ", techTagsDisplay)}
           {techTagsDisplay.map((obj, i) => techTagDisplayRenderer(obj, i))}
@@ -200,7 +200,7 @@ export default function Projects() {
         </div>
         <div
           id="project-display area"
-          className="flex flex-wrap bg-base-200 max-w-screen h-[50rem] sm:h-[54rem] overflow-scroll"
+          className="flex flex-wrap bg-base-200 max-w-screen h-[24rem] sm:h-[54rem] md:h-[50rem] overflow-scroll"
         >
           <ul className="flex flex-wrap gap-4 justify-evenly">
             {projectsToDisplay.map(
